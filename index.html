@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Aid Myths vs. Facts Worksheet - My College Finance</title>
+    <style>
+        /* MCF CSS Variables - ALWAYS INCLUDE */
+        :root {
+            --mcf-brand-blue: #012699;
+            --mcf-brand-green: #26e011;
+            --mcf-brand-amber: #fdc003;
+            --mcf-brand-black: #000516;
+            --mcf-background: #fafafa;
+            --mcf-foreground: #09090b;
+            --mcf-card: #ffffff;
+            --mcf-card-foreground: #09090b;
+            --mcf-popover: #ffffff;
+            --mcf-popover-foreground: #09090b;
+            --mcf-primary: #336bff;
+            --mcf-primary-foreground: #f8fafc;
+            --mcf-secondary: #f1f5f9;
+            --mcf-secondary-foreground: #64748b;
+            --mcf-muted: #f1f5f9;
+            --mcf-muted-foreground: #64748b;
+            --mcf-accent: #f1f5f9;
+            --mcf-accent-foreground: #64748b;
+            --mcf-destructive: #ef4444;
+            --mcf-destructive-foreground: #f8fafc;
+            --mcf-border: #e2e8f0;
+            --mcf-input: #e2e8f0;
+            --mcf-ring: #09090b;
+            --mcf-radius: 0.5rem;
+            --mcf-transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Color Scheme */
+        body.dark-mode {
+            --mcf-background: #09090b;
+            --mcf-foreground: #ffffff;
+            --mcf-card: #1a1a1f;
+            --mcf-card-foreground: #ffffff;
+            --mcf-popover: #09090b;
+            --mcf-popover-foreground: #ffffff;
+            --mcf-primary: #4c6ef5;
+            --mcf-primary-foreground: #ffffff;
+            --mcf-secondary: #374151;
+            --mcf-secondary-foreground: #ffffff;
+            --mcf-muted: #1c1917;
+            --mcf-muted-foreground: #e2e8f0;
+            --mcf-accent: #374151;
+            --mcf-accent-foreground: #ffffff;
+            --mcf-destructive: #ef4444;
+            --mcf-destructive-foreground: #ffffff;
+            --mcf-border: #374151;
+            --mcf-input: #1f2937;
+            --mcf-ring: #ffffff;
+            --mcf-brand-blue: #3b82f6;
+            --mcf-brand-green: #22c55e;
+            --mcf-brand-amber: #f59e0b;
+            --mcf-brand-black: #ffffff;
+        }
+
+        /* System font stack */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                         'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: var(--mcf-background);
+            color: var(--mcf-foreground);
+            transition: var(--mcf-transition);
+        }
+
+        /* Container */
+        .mcf-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Header */
+        .mcf-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--mcf-border);
+            position: relative;
+        }
+
+        .mcf-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .mcf-brand-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--mcf-brand-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .mcf-tagline {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--mcf-muted-foreground);
+        }
+
+        .mcf-title {
+            font-size: 2.25rem;
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin: 1.5rem 0 1rem;
+            background: linear-gradient(135deg, var(--mcf-brand-blue), var(--mcf-primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mcf-subtitle {
+            font-size: 1.125rem;
+            color: var(--mcf-muted-foreground);
+            margin-bottom: 1rem;
+        }
+
+        /* Dark Mode Toggle */
+        .mcf-theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 2px solid var(--mcf-border);
+            background: var(--mcf-card);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--mcf-transition);
+            color: var(--mcf-foreground);
+        }
+
+        .mcf-theme-toggle:hover {
+            border-color: var(--mcf-primary);
+            transform: scale(1.1);
+        }
+
+        .mcf-sun-icon,
+        .mcf-moon-icon {
+            position: absolute;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Quick Actions Bar */
+        .quick-actions-bar {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--mcf-card);
+            border: 1px solid var(--mcf-border);
+            border-radius: var(--mcf-radius);
+            flex-wrap: wrap;
+        }
+
+        .quick-actions-bar .mcf-btn {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            background: var(--mcf-card);
+            border: 2px solid var(--mcf-border);
+            border-radius: calc(var(--mcf-radius) * 1.5);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .progress-stats {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+            color: var(--mcf-muted-foreground);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .stat-correct { background: var(--mcf-brand-green); }
+        .stat-incorrect { background: var(--mcf-destructive); }
+        .stat-remaining { background: var(--mcf-brand-amber); }
+
+        .progress-bar-container {
+            background: var(--mcf-muted);
+            border-radius: var(--mcf-radius);
+            height: 12px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--mcf-brand-green) 0%, var(--mcf-brand-blue) 100%);
+            border-radius: var(--mcf-radius);
+            transition: width 0.5s ease;
+        }
+
+        .progress-percentage {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            color: var(--mcf-brand-blue);
+        }
+
+        /* Myth Cards */
+        .myths-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .myth-card {
+            background: var(--mcf-card);
+            border: 2px solid var(--mcf-border);
+            border-radius: calc(var(--mcf-radius) * 1.5);
+            padding: 1.5rem;
+            transition: var(--mcf-transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .myth-card.answered-correct {
+            border-color: var(--mcf-brand-green);
+            background: linear-gradient(135deg, rgba(38, 224, 17, 0.05) 0%, transparent 100%);
+        }
+
+        .myth-card.answered-incorrect {
+            border-color: var(--mcf-destructive);
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, transparent 100%);
+        }
+
+        .myth-card:hover:not(.answered-correct):not(.answered-incorrect) {
+            border-color: var(--mcf-brand-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .myth-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            background: var(--mcf-brand-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .myth-statement {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-right: 3rem;
+            line-height: 1.4;
+        }
+
+        .answer-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .answer-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--mcf-border);
+            background: var(--mcf-background);
+            color: var(--mcf-foreground);
+            border-radius: var(--mcf-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--mcf-transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .answer-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .answer-btn.myth-btn:hover:not(:disabled) {
+            border-color: var(--mcf-destructive);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .answer-btn.fact-btn:hover:not(:disabled) {
+            border-color: var(--mcf-brand-green);
+            background: rgba(38, 224, 17, 0.1);
+        }
+
+        .answer-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .answer-btn.selected-correct {
+            background: var(--mcf-brand-green);
+            color: var(--mcf-brand-black);
+            border-color: var(--mcf-brand-green);
+        }
+
+        .answer-btn.selected-incorrect {
+            background: var(--mcf-destructive);
+            color: white;
+            border-color: var(--mcf-destructive);
+        }
+
+        .feedback-section {
+            display: none;
+            padding: 1rem;
+            border-radius: var(--mcf-radius);
+            margin-top: 1rem;
+            animation: slideDown 0.3s ease;
+        }
+
+        .feedback-section.show {
+            display: block;
+        }
+
+        .feedback-section.correct {
+            background: rgba(38, 224, 17, 0.1);
+            border-left: 4px solid var(--mcf-brand-green);
+        }
+
+        .feedback-section.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--mcf-destructive);
+        }
+
+        .feedback-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feedback-text {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-explanation {
+            color: var(--mcf-muted-foreground);
+            line-height: 1.6;
+        }
+
+        .extra-info {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--mcf-border);
+        }
+
+        .extra-info-title {
+            font-weight: 600;
+            color: var(--mcf-brand-blue);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .extra-info-content {
+            color: var(--mcf-muted-foreground);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* Reflection Section */
+        .reflection-section {
+            background: var(--mcf-card);
+            border: 2px solid var(--mcf-border);
+            border-radius: calc(var(--mcf-radius) * 1.5);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .reflection-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--mcf-brand-blue);
+        }
+
+        .reflection-prompt {
+            font-size: 1rem;
+            color: var(--mcf-muted-foreground);
+            margin-bottom: 1rem;
+        }
+
+        .reflection-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid var(--mcf-input);
+            border-radius: var(--mcf-radius);
+            background: var(--mcf-background);
+            color: var(--mcf-foreground);
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+            transition: var(--mcf-transition);
+        }
+
+        .reflection-textarea:focus {
+            outline: none;
+            border-color: var(--mcf-primary);
+            box-shadow: 0 0 0 3px rgba(51, 107, 255, 0.1);
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 0.75rem;
+            color: var(--mcf-muted-foreground);
+            margin-top: 0.5rem;
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            background: linear-gradient(135deg, var(--mcf-card) 0%, rgba(51, 107, 255, 0.05) 100%);
+            border: 2px solid var(--mcf-brand-blue);
+            border-radius: calc(var(--mcf-radius) * 2);
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .results-section.show {
+            display: block;
+            animation: scaleUp 0.5s ease;
+        }
+
+        .results-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--mcf-brand-blue), var(--mcf-brand-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .score-display {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            color: var(--mcf-brand-green);
+        }
+
+        .score-message {
+            font-size: 1.125rem;
+            color: var(--mcf-muted-foreground);
+            margin-bottom: 1.5rem;
+        }
+
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--mcf-background);
+            padding: 1rem;
+            border-radius: var(--mcf-radius);
+            border: 1px solid var(--mcf-border);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--mcf-brand-blue);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--mcf-muted-foreground);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .mcf-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--mcf-radius);
+            transition: var(--mcf-transition);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            font-family: inherit;
+            gap: 0.5rem;
+        }
+
+        .mcf-btn-primary {
+            background-color: var(--mcf-primary);
+            color: var(--mcf-primary-foreground);
+        }
+
+        .mcf-btn-primary:hover {
+            background-color: var(--mcf-brand-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mcf-btn-success {
+            background-color: var(--mcf-brand-green);
+            color: var(--mcf-brand-black);
+        }
+
+        .mcf-btn-success:hover {
+            background-color: #1fb80d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(38, 224, 17, 0.2);
+        }
+
+        .mcf-btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--mcf-border);
+            color: var(--mcf-foreground);
+        }
+
+        .mcf-btn-outline:hover {
+            border-color: var(--mcf-primary);
+            background-color: rgba(51, 107, 255, 0.05);
+        }
+
+        /* Footer */
+        .mcf-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--mcf-border);
+        }
+
+        .mcf-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .mcf-footer-link {
+            color: var(--mcf-muted-foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .mcf-footer-link:hover {
+            color: var(--mcf-brand-blue);
+            text-decoration: underline;
+        }
+
+        .mcf-copyright {
+            font-size: 0.75rem;
+            color: var(--mcf-muted-foreground);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mcf-title {
+                font-size: 1.75rem;
+            }
+
+            .answer-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .results-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .mcf-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mcf-container">
+        <!-- Header -->
+        <header class="mcf-header">
+            <button id="mcf-theme-toggle" class="mcf-theme-toggle" aria-label="Toggle dark mode">
+                <svg class="mcf-sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="4" fill="currentColor"/>
+                    <path d="M10 0v4M10 16v4M20 10h-4M4 10H0M17.07 2.93l-2.83 2.83M5.76 14.24l-2.83 2.83M17.07 17.07l-2.83-2.83M5.76 5.76L2.93 2.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg class="mcf-moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:none;">
+                    <path d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C10.3395 3 10.6734 3.02389 11 3.07039C9.27477 4.07544 8 5.8965 8 8C8 11.3137 10.6863 14 14 14C15.1035 14 16.0754 13.6238 16.9296 12.9998C16.9762 13.3266 17 13.6605 17 14Z" fill="currentColor"/>
+                </svg>
+            </button>
+
+            <img src="https://static.wixstatic.com/media/c24a60_2b6231b666214539ae22ebd2dffe7a09~mv2.png" 
+                 alt="My College Finance Logo" 
+                 class="mcf-logo">
+            <div class="mcf-brand-name">MY COLLEGE FINANCE</div>
+            <div class="mcf-tagline">EDUCATE • MOTIVATE • ELEVATE</div>
+            <h1 class="mcf-title">Financial Aid Myths vs. Facts</h1>
+            <p class="mcf-subtitle">Test your knowledge and separate fiction from fact about college financial aid</p>
+        </header>
+        
+        <!-- Quick Actions Bar -->
+        <div class="quick-actions-bar">
+            <button class="mcf-btn mcf-btn-outline" onclick="downloadTemplate()">
+                📄 Blank Template
+            </button>
+            <button class="mcf-btn mcf-btn-outline" onclick="resetQuiz()">
+                🔄 Reset Quiz
+            </button>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <div class="progress-title">📊 Your Progress</div>
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon stat-correct">✓</div>
+                        <span id="correct-count">0</span> Correct
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon stat-incorrect">✗</div>
+                        <span id="incorrect-count">0</span> Incorrect
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon stat-remaining">?</div>
+                        <span id="remaining-count">10</span> Remaining
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+            </div>
+            <div class="progress-percentage" id="progress-percentage">0% Complete</div>
+        </div>
+
+        <!-- Myths Grid -->
+        <div class="myths-grid" id="myths-grid">
+            <!-- Myth cards will be dynamically generated here -->
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="results-section">
+            <h2 class="results-title">🎉 Quiz Complete!</h2>
+            <div class="score-display" id="final-score">0/10</div>
+            <p class="score-message" id="score-message">Great job!</p>
+            
+            <div class="results-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="accuracy-stat">0%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="time-stat">0:00</div>
+                    <div class="stat-label">Time Taken</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="knowledge-stat">-</div>
+                    <div class="stat-label">Knowledge Level</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="mcf-btn mcf-btn-primary" onclick="resetQuiz()">
+                    🔄 Retake Quiz
+                </button>
+                <button class="mcf-btn mcf-btn-success" onclick="saveAndDownload()">
+                    📥 Download Final Results PDF
+                </button>
+                <button class="mcf-btn mcf-btn-outline" onclick="downloadTemplate()">
+                    📄 Download Template
+                </button>
+            </div>
+        </div>
+
+        <!-- Reflection Section -->
+        <div class="reflection-section">
+            <h2 class="reflection-title">💭 Your Reflection</h2>
+            <p class="reflection-prompt">Which myth surprised you the most? How will this new knowledge change your approach to college financial planning?</p>
+            <textarea 
+                id="reflection-textarea"
+                class="reflection-textarea" 
+                placeholder="Share your thoughts here... (Your response will be saved automatically)"
+                maxlength="500"
+            ></textarea>
+            <div class="char-count">
+                <span id="char-current">0</span>/500 characters
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mcf-footer">
+            <div class="mcf-footer-links">
+                <a href="https://www.mycollegefinance.com/" target="_blank" class="mcf-footer-link">Main Website</a>
+                <span>•</span>
+                <a href="https://www.mycollegefinance.com/privacy-policy" target="_blank" class="mcf-footer-link">Privacy Policy</a>
+                <span>•</span>
+                <a href="https://www.mycollegefinance.com/terms-policy" target="_blank" class="mcf-footer-link">Terms of Service</a>
+                <span>•</span>
+                <a href="https://linktr.ee/mycollegefinance" target="_blank" class="mcf-footer-link">Social Media</a>
+            </div>
+            <p class="mcf-copyright">© 2025 My College Finance. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Myths and Facts Data with expanded information
+        const mythsData = [
+            {
+                id: 1,
+                statement: "Only low-income families qualify for financial aid.",
+                isMyth: true,
+                factExplanation: "Many middle and upper-middle income families qualify for various forms of financial aid, including merit-based scholarships, subsidized loans, and institutional grants.",
+                extraInfo: "Did you know? In 2024, families with incomes up to $250,000 may still qualify for need-based aid at expensive private colleges. Additionally, merit scholarships don't consider income at all!"
+            },
+            {
+                id: 2,
+                statement: "The FAFSA is too complicated and takes hours to complete.",
+                isMyth: true,
+                factExplanation: "The 2024-25 FAFSA has been significantly simplified and can be completed in under 30 minutes for most families, with only 36 questions compared to the previous 108.",
+                extraInfo: "Pro tip: The new FAFSA automatically imports tax information from the IRS, eliminating manual entry errors and saving significant time!"
+            },
+            {
+                id: 3,
+                statement: "I don't need to apply for FAFSA if I'm not taking out loans.",
+                isMyth: true,
+                factExplanation: "FAFSA unlocks access to grants, work-study programs, and many state and institutional aid programs—not just loans. Many scholarships also require FAFSA completion.",
+                extraInfo: "Important: Over $2.6 billion in Pell Grants go unclaimed each year because students don't complete the FAFSA. Don't leave free money on the table!"
+            },
+            {
+                id: 4,
+                statement: "Private scholarships aren't worth the effort because they're too competitive.",
+                isMyth: true,
+                factExplanation: "Small scholarships ($500-$2,000) often have fewer applicants and can significantly reduce your overall borrowing. Many students win multiple smaller awards that add up.",
+                extraInfo: "Strategy tip: Local scholarships from community organizations, businesses, and foundations often have the best odds—sometimes fewer than 10 applicants!"
+            },
+            {
+                id: 5,
+                statement: "My parents make too much money, so I won't qualify for any aid.",
+                isMyth: true,
+                factExplanation: "Financial aid considers many factors beyond income, including family size, number of students in college, assets, and special circumstances. Merit aid doesn't consider income at all.",
+                extraInfo: "Reality check: 86% of undergraduate students receive some form of financial aid, including those from families earning over $100,000 annually."
+            },
+            {
+                id: 6,
+                statement: "You must complete the FAFSA every year you're in college.",
+                isMyth: false,
+                factExplanation: "This is actually TRUE! FAFSA must be completed annually because family financial situations change, and aid eligibility is reassessed each academic year.",
+                extraInfo: "Reminder: Renewal FAFSAs are pre-populated with previous year's information, making subsequent applications even faster—typically under 20 minutes!"
+            },
+            {
+                id: 7,
+                statement: "If I take a gap year, I'll lose all my financial aid opportunities.",
+                isMyth: true,
+                factExplanation: "Most colleges allow you to defer enrollment and financial aid for a gap year. You'll need to reapply for FAFSA, but your eligibility typically remains intact.",
+                extraInfo: "Bonus: Some gap year programs offer their own scholarships, and working during a gap year can actually improve your financial aid package by reducing expected family contribution."
+            },
+            {
+                id: 8,
+                statement: "Student loans start accruing interest immediately after disbursement.",
+                isMyth: true,
+                factExplanation: "Subsidized federal loans don't accrue interest while you're in school at least half-time. Only unsubsidized loans and private loans typically accrue interest immediately.",
+                extraInfo: "Money-saving tip: If you have unsubsidized loans, making small interest payments while in school can save thousands in the long run!"
+            },
+            {
+                id: 9,
+                statement: "Community college students can receive federal financial aid.",
+                isMyth: false,
+                factExplanation: "This is TRUE! Community college students are fully eligible for federal grants, work-study, and loans, just like four-year college students.",
+                extraInfo: "Smart strategy: Starting at community college with financial aid can save $30,000+ on your bachelor's degree through transfer programs!"
+            },
+            {
+                id: 10,
+                statement: "Athletic scholarships always cover full tuition, room, and board.",
+                isMyth: true,
+                factExplanation: "Most athletic scholarships are partial awards. Only about 2% of high school athletes receive athletic scholarships, and the average award covers less than half of college costs.",
+                extraInfo: "Eye-opener: Division III schools don't offer athletic scholarships at all, but they often provide generous academic and need-based aid packages to athletes."
+            }
+        ];
+
+        // Application State
+        let quizState = {
+            answers: {},
+            startTime: Date.now(),
+            currentQuestion: 0,
+            correctCount: 0,
+            incorrectCount: 0
+        };
+
+        // Initialize quiz
+        function initializeQuiz() {
+            const grid = document.getElementById('myths-grid');
+            grid.innerHTML = '';
+
+            mythsData.forEach(myth => {
+                const card = createMythCard(myth);
+                grid.appendChild(card);
+            });
+
+            loadSavedState();
+            updateProgress();
+        }
+
+        // Create myth card HTML
+        function createMythCard(myth) {
+            const card = document.createElement('div');
+            card.className = 'myth-card';
+            card.id = `myth-${myth.id}`;
+            
+            card.innerHTML = `
+                <div class="myth-number">${myth.id}</div>
+                <h3 class="myth-statement">"${myth.statement}"</h3>
+                
+                <div class="answer-buttons">
+                    <button class="answer-btn myth-btn" onclick="answerQuestion(${myth.id}, true)">
+                        ❌ MYTH
+                    </button>
+                    <button class="answer-btn fact-btn" onclick="answerQuestion(${myth.id}, false)">
+                        ✅ FACT
+                    </button>
+                </div>
+                
+                <div class="feedback-section" id="feedback-${myth.id}">
+                    <div class="feedback-icon" id="feedback-icon-${myth.id}"></div>
+                    <div class="feedback-text" id="feedback-text-${myth.id}"></div>
+                    <div class="fact-explanation">${myth.factExplanation}</div>
+                    <div class="extra-info">
+                        <div class="extra-info-title">
+                            💡 Additional Insight:
+                        </div>
+                        <div class="extra-info-content">${myth.extraInfo}</div>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Handle answer selection
+        function answerQuestion(mythId, isMyth) {
+            const myth = mythsData.find(m => m.id === mythId);
+            const isCorrect = myth.isMyth === isMyth;
+            
+            // Save answer
+            quizState.answers[mythId] = {
+                selected: isMyth,
+                correct: isCorrect,
+                timestamp: Date.now()
+            };
+            
+            // Update UI
+            const card = document.getElementById(`myth-${mythId}`);
+            const buttons = card.querySelectorAll('.answer-btn');
+            const feedback = document.getElementById(`feedback-${mythId}`);
+            const feedbackIcon = document.getElementById(`feedback-icon-${mythId}`);
+            const feedbackText = document.getElementById(`feedback-text-${mythId}`);
+            
+            // Disable buttons
+            buttons.forEach(btn => btn.disabled = true);
+            
+            // Highlight selected answer
+            if (isMyth) {
+                buttons[0].classList.add(isCorrect ? 'selected-correct' : 'selected-incorrect');
+            } else {
+                buttons[1].classList.add(isCorrect ? 'selected-correct' : 'selected-incorrect');
+            }
+            
+            // Update card appearance
+            card.classList.add(isCorrect ? 'answered-correct' : 'answered-incorrect');
+            
+            // Show feedback
+            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
+            feedbackIcon.textContent = isCorrect ? '✅' : '❌';
+            feedbackText.textContent = isCorrect ? 'Correct! Well done!' : 'Not quite right, but now you know!';
+            
+            // Update counts
+            if (isCorrect) {
+                quizState.correctCount++;
+            } else {
+                quizState.incorrectCount++;
+            }
+            
+            updateProgress();
+            saveState();
+            
+            // Check if quiz is complete
+            if (Object.keys(quizState.answers).length === mythsData.length) {
+                showResults();
+            }
+        }
+
+        // Update progress display
+        function updateProgress() {
+            const answered = Object.keys(quizState.answers).length;
+            const total = mythsData.length;
+            const percentage = Math.round((answered / total) * 100);
+            
+            document.getElementById('correct-count').textContent = quizState.correctCount;
+            document.getElementById('incorrect-count').textContent = quizState.incorrectCount;
+            document.getElementById('remaining-count').textContent = total - answered;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-percentage').textContent = `${percentage}% Complete`;
+        }
+
+        // Show results
+        function showResults() {
+            const resultsSection = document.getElementById('results-section');
+            const accuracy = Math.round((quizState.correctCount / mythsData.length) * 100);
+            const timeTaken = Math.floor((Date.now() - quizState.startTime) / 1000);
+            const minutes = Math.floor(timeTaken / 60);
+            const seconds = timeTaken % 60;
+            
+            document.getElementById('final-score').textContent = `${quizState.correctCount}/${mythsData.length}`;
+            document.getElementById('accuracy-stat').textContent = `${accuracy}%`;
+            document.getElementById('time-stat').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Determine knowledge level
+            let knowledgeLevel, message;
+            if (accuracy >= 90) {
+                knowledgeLevel = 'Expert';
+                message = 'Outstanding! You have an excellent understanding of financial aid facts!';
+            } else if (accuracy >= 70) {
+                knowledgeLevel = 'Proficient';
+                message = 'Great job! You have a solid grasp of financial aid basics!';
+            } else if (accuracy >= 50) {
+                knowledgeLevel = 'Developing';
+                message = 'Good effort! Keep learning to strengthen your financial aid knowledge!';
+            } else {
+                knowledgeLevel = 'Beginner';
+                message = "Don't worry! Now you know the facts and can make better decisions!";
+            }
+            
+            document.getElementById('knowledge-stat').textContent = knowledgeLevel;
+            document.getElementById('score-message').textContent = message;
+            
+            resultsSection.classList.add('show');
+            
+            // Smooth scroll to results
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Reset quiz
+        function resetQuiz() {
+            quizState = {
+                answers: {},
+                startTime: Date.now(),
+                currentQuestion: 0,
+                correctCount: 0,
+                incorrectCount: 0
+            };
+            
+            localStorage.removeItem('mcf-myths-quiz-state');
+            document.getElementById('results-section').classList.remove('show');
+            document.getElementById('reflection-textarea').value = '';
+            
+            initializeQuiz();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Save state to localStorage
+        function saveState() {
+            const state = {
+                ...quizState,
+                reflection: document.getElementById('reflection-textarea').value
+            };
+            localStorage.setItem('mcf-myths-quiz-state', JSON.stringify(state));
+        }
+
+        // Load saved state
+        function loadSavedState() {
+            const saved = localStorage.getItem('mcf-myths-quiz-state');
+            if (saved) {
+                const state = JSON.parse(saved);
+                quizState = {
+                    ...state,
+                    reflection: undefined
+                };
+                
+                // Restore answers
+                Object.entries(state.answers || {}).forEach(([mythId, answer]) => {
+                    const myth = mythsData.find(m => m.id === parseInt(mythId));
+                    if (myth) {
+                        // Recreate the answered state without triggering the answer function
+                        const card = document.getElementById(`myth-${mythId}`);
+                        const buttons = card.querySelectorAll('.answer-btn');
+                        const feedback = document.getElementById(`feedback-${mythId}`);
+                        const feedbackIcon = document.getElementById(`feedback-icon-${mythId}`);
+                        const feedbackText = document.getElementById(`feedback-text-${mythId}`);
+                        
+                        buttons.forEach(btn => btn.disabled = true);
+                        
+                        if (answer.selected) {
+                            buttons[0].classList.add(answer.correct ? 'selected-correct' : 'selected-incorrect');
+                        } else {
+                            buttons[1].classList.add(answer.correct ? 'selected-correct' : 'selected-incorrect');
+                        }
+                        
+                        card.classList.add(answer.correct ? 'answered-correct' : 'answered-incorrect');
+                        feedback.classList.add('show', answer.correct ? 'correct' : 'incorrect');
+                        feedbackIcon.textContent = answer.correct ? '✅' : '❌';
+                        feedbackText.textContent = answer.correct ? 'Correct! Well done!' : 'Not quite right, but now you know!';
+                    }
+                });
+                
+                // Restore reflection
+                if (state.reflection) {
+                    document.getElementById('reflection-textarea').value = state.reflection;
+                    updateCharCount();
+                }
+                
+                // Show results if complete
+                if (Object.keys(state.answers || {}).length === mythsData.length) {
+                    showResults();
+                }
+            }
+        }
+
+        // Save and download PDF
+        function saveAndDownload() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            const reflection = document.getElementById('reflection-textarea').value;
+            const accuracy = Math.round((quizState.correctCount / mythsData.length) * 100);
+            const timeTaken = Math.floor((Date.now() - quizState.startTime) / 1000);
+            const minutes = Math.floor(timeTaken / 60);
+            const seconds = timeTaken % 60;
+            
+            // Helper function to add colored rectangle
+            function addColoredRect(x, y, width, height, color) {
+                doc.setFillColor(color);
+                doc.rect(x, y, width, height, 'F');
+            }
+            
+            // Helper function to add text with background
+            function addTextWithBackground(text, x, y, fontSize, textColor, bgColor, width) {
+                doc.setFontSize(fontSize);
+                doc.setTextColor(textColor);
+                if (bgColor) {
+                    const textHeight = fontSize * 0.4;
+                    addColoredRect(x, y - textHeight + 2, width, textHeight + 2, bgColor);
+                }
+                doc.text(text, x, y);
+            }
+            
+            // Page 1: Header and Summary
+            // Add header background
+            addColoredRect(0, 0, 210, 40, [1, 38, 153]);
+            
+            // MCF branding with white text
+            doc.setFontSize(18);
+            doc.setTextColor(255, 255, 255);
+            doc.text('MY COLLEGE FINANCE', 105, 15, { align: 'center' });
+            
+            doc.setFontSize(8);
+            doc.text('EDUCATE • MOTIVATE • ELEVATE', 105, 25, { align: 'center' });
+            
+            // Add decorative line
+            doc.setDrawColor(1, 38, 153);
+            doc.setLineWidth(2);
+            doc.line(20, 35, 190, 35);
+            
+            // Title section
+            doc.setFontSize(16);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Financial Aid Myths vs. Facts', 105, 50, { align: 'center' });
+            
+            doc.setFontSize(14);
+            doc.setTextColor(100, 100, 100);
+            doc.text('Quiz Results Report', 105, 58, { align: 'center' });
+            
+            // Results summary box
+            const summaryY = 70;
+            addColoredRect(20, summaryY, 170, 50, [240, 248, 255]);
+            doc.setDrawColor(1, 38, 153);
+            doc.setLineWidth(1);
+            doc.rect(20, summaryY, 170, 50);
+            
+            // Score display
+            doc.setFontSize(24);
+            doc.setTextColor(1, 38, 153);
+            doc.text(`${quizState.correctCount}/${mythsData.length}`, 30, summaryY + 20);
+            
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Correct Answers', 30, summaryY + 30);
+            
+            // Accuracy percentage
+            doc.setFontSize(20);
+            doc.setTextColor(34, 197, 94);
+            doc.text(`${accuracy}%`, 120, summaryY + 20);
+            
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Accuracy Rate', 120, summaryY + 30);
+            
+            // Time taken
+            doc.setFontSize(12);
+            doc.setTextColor(100, 100, 100);
+            doc.text(`Time: ${minutes}:${seconds.toString().padStart(2, '0')}`, 30, summaryY + 45);
+            
+            // Performance message
+            let performanceMessage = '';
+            let performanceColor = [0, 0, 0];
+            if (accuracy >= 90) {
+                performanceMessage = 'Outstanding! Excellent understanding of financial aid facts!';
+                performanceColor = [34, 197, 94];
+            } else if (accuracy >= 70) {
+                performanceMessage = 'Great job! Solid grasp of financial aid basics!';
+                performanceColor = [59, 130, 246];
+            } else if (accuracy >= 50) {
+                performanceMessage = 'Good effort! Keep learning to strengthen your knowledge!';
+                performanceColor = [245, 158, 11];
+            } else {
+                performanceMessage = "Don't worry! Now you know the facts and can make better decisions!";
+                performanceColor = [239, 68, 68];
+            }
+            
+            doc.setFontSize(11);
+            doc.setTextColor(performanceColor);
+            doc.text(performanceMessage, 105, 140, { align: 'center' });
+            
+            // Add completion date
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text(`Completed: ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}`, 105, 155, { align: 'center' });
+            
+            // Page 2: Detailed Results
+            doc.addPage();
+            
+            // Header for page 2
+            addColoredRect(0, 0, 210, 25, [1, 38, 153]);
+            doc.setFontSize(14);
+            doc.setTextColor(255, 255, 255);
+            doc.text('Detailed Results', 105, 15, { align: 'center' });
+            
+            let yPos = 40;
+            
+            // Add section header
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Question-by-Question Breakdown:', 20, yPos);
+            yPos += 15;
+            
+            mythsData.forEach((myth, index) => {
+                if (yPos > 250) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+                
+                const answer = quizState.answers[myth.id];
+                const isCorrect = answer?.correct;
+                const userAnswer = answer?.selected ? 'MYTH' : 'FACT';
+                const correctAnswer = myth.isMyth ? 'MYTH' : 'FACT';
+                
+                // Question number and status
+                const statusIcon = isCorrect ? '✓' : '✗';
+                const statusColor = isCorrect ? [34, 197, 94] : [239, 68, 68];
+                
+                doc.setFontSize(10);
+                doc.setTextColor(statusColor);
+                doc.text(`${myth.id}. ${statusIcon}`, 20, yPos);
+                
+                // Question text
+                doc.setTextColor(0, 0, 0);
+                const questionText = myth.statement.length > 80 ? myth.statement.substring(0, 80) + '...' : myth.statement;
+                doc.text(questionText, 35, yPos);
+                yPos += 8;
+                
+                // Answer details
+                doc.setFontSize(9);
+                doc.setTextColor(100, 100, 100);
+                doc.text(`Your answer: ${userAnswer} | Correct answer: ${correctAnswer}`, 35, yPos);
+                yPos += 12;
+            });
+            
+            // Page 3: Reflection (if present)
+            if (reflection && reflection.trim()) {
+                doc.addPage();
+                
+                // Header for reflection
+                addColoredRect(0, 0, 210, 25, [1, 38, 153]);
+                doc.setFontSize(14);
+                doc.setTextColor(255, 255, 255);
+                doc.text('Your Reflection', 105, 15, { align: 'center' });
+                
+                yPos = 40;
+                
+                // Reflection prompt
+                doc.setFontSize(12);
+                doc.setTextColor(0, 0, 0);
+                doc.text('Reflection on the Quiz:', 20, yPos);
+                yPos += 10;
+                
+                // Reflection content in a box
+                addColoredRect(20, yPos - 5, 170, 100, [248, 250, 252]);
+                doc.setDrawColor(1, 38, 153);
+                doc.setLineWidth(1);
+                doc.rect(20, yPos - 5, 170, 100);
+                
+                doc.setFontSize(10);
+                doc.setTextColor(0, 0, 0);
+                const lines = doc.splitTextToSize(reflection, 160);
+                doc.text(lines, 25, yPos + 5);
+            }
+            
+            // Footer on all pages
+            const pageCount = doc.internal.getNumberOfPages();
+            for (let i = 1; i <= pageCount; i++) {
+                doc.setPage(i);
+                
+                // Footer line
+                doc.setDrawColor(200, 200, 200);
+                doc.setLineWidth(0.5);
+                doc.line(20, 280, 190, 280);
+                
+                // Footer text
+                doc.setFontSize(8);
+                doc.setTextColor(100, 100, 100);
+                doc.text('© 2025 My College Finance. All rights reserved.', 105, 285, { align: 'center' });
+                doc.text(`Page ${i} of ${pageCount}`, 105, 290, { align: 'center' });
+            }
+            
+            // Save the PDF
+            doc.save('MCF-Financial-Aid-Myths-Results.pdf');
+        }
+
+        // Download blank template
+        function downloadTemplate() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Add MCF branding
+            doc.setFontSize(20);
+            doc.setTextColor(1, 38, 153);
+            doc.text('MY COLLEGE FINANCE', 105, 20, { align: 'center' });
+            
+            doc.setFontSize(10);
+            doc.setTextColor(100, 116, 139);
+            doc.text('EDUCATE • MOTIVATE • ELEVATE', 105, 28, { align: 'center' });
+            
+            // Add title
+            doc.setFontSize(16);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Financial Aid Myths vs. Facts Worksheet', 105, 45, { align: 'center' });
+            
+            doc.setFontSize(10);
+            doc.text('Name: _______________________  Date: ___________', 20, 60);
+            
+            // Add instructions
+            doc.setFontSize(12);
+            doc.text('Instructions: Mark each statement as MYTH or FACT', 20, 75);
+            
+            // Add questions
+            doc.setFontSize(10);
+            let yPos = 90;
+            
+            mythsData.forEach((myth, index) => {
+                if (yPos > 250) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+                
+                doc.text(`${myth.id}. ${myth.statement}`, 20, yPos);
+                doc.text('☐ MYTH    ☐ FACT', 30, yPos + 8);
+                yPos += 20;
+            });
+            
+            // Add reflection section
+            if (yPos > 200) {
+                doc.addPage();
+                yPos = 20;
+            }
+            
+            doc.setFontSize(12);
+            doc.text('Reflection:', 20, yPos);
+            yPos += 10;
+            
+            doc.setFontSize(10);
+            doc.text('Which myth surprised you the most? Why?', 20, yPos);
+            yPos += 15;
+            doc.line(20, yPos, 190, yPos);
+            yPos += 10;
+            doc.line(20, yPos, 190, yPos);
+            yPos += 10;
+            doc.line(20, yPos, 190, yPos);
+            
+            // Add footer
+            doc.setFontSize(8);
+            doc.setTextColor(100, 116, 139);
+            doc.text('© 2025 My College Finance. All rights reserved.', 105, 285, { align: 'center' });
+            
+            // Save the template
+            doc.save('MCF-Financial-Aid-Myths-Template.pdf');
+        }
+
+        // Character count for reflection
+        function updateCharCount() {
+            const textarea = document.getElementById('reflection-textarea');
+            const current = textarea.value.length;
+            document.getElementById('char-current').textContent = current;
+            
+            // Auto-save reflection
+            saveState();
+        }
+        
+        // Dark mode implementation
+        function initDarkMode() {
+            const currentTheme = localStorage.getItem('mcf-theme') || 'light';
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                updateThemeIcon(true);
+            }
+
+            const toggleDarkMode = () => {
+                const isDark = document.body.classList.toggle('dark-mode');
+                localStorage.setItem('mcf-theme', isDark ? 'dark' : 'light');
+                updateThemeIcon(isDark);
+            };
+
+            function updateThemeIcon(isDark) {
+                const sunIcons = document.querySelectorAll('.mcf-sun-icon');
+                const moonIcons = document.querySelectorAll('.mcf-moon-icon');
+                
+                sunIcons.forEach(icon => {
+                    icon.style.display = isDark ? 'none' : 'block';
+                });
+                
+                moonIcons.forEach(icon => {
+                    icon.style.display = isDark ? 'block' : 'none';
+                });
+            }
+
+            const toggleBtn = document.getElementById('mcf-theme-toggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', toggleDarkMode);
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initDarkMode();
+            initializeQuiz();
+            
+            // Set up reflection textarea listener
+            document.getElementById('reflection-textarea').addEventListener('input', updateCharCount);
+        });
+    </script>
+</body>
+</html>
