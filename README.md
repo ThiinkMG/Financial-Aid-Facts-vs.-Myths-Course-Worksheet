@@ -6,6 +6,12 @@ An interactive educational tool designed to help students and parents separate f
 
 This project is an interactive web application that presents 10 common financial aid myths and facts in a quiz format. Users can test their knowledge, receive immediate feedback, and learn valuable information about college financial aid processes.
 
+### Try it out
+
+[Try Financial Aid Myths vs. Facts Worksheet (Online Link)](https://thiinkmg.github.io/Financial-Aid-Facts-vs.-Myths-Course-Worksheet/)
+
+---
+
 ## ✨ Features
 
 - **Interactive Quiz Format**: 10 carefully curated financial aid statements to test knowledge
